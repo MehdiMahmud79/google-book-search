@@ -32,6 +32,7 @@ function App() {
     cache: new InMemoryCache(),
     link: concat(authMiddleware, httpLink),
   });
+
   return (
     <ApolloProvider client={client}>
       <Router>

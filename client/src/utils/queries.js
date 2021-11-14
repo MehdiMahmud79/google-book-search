@@ -1,18 +1,5 @@
 import { gql } from "@apollo/client";
 
-export const signUpMutation = gql`
-  mutation signUp($username: String!, $email: String!, $password: String!) {
-    signUp(username: $username, email: $email, password: $password) {
-      token
-      user {
-        _id
-        email
-        username
-      }
-    }
-  }
-`;
-
 export const getMe = gql`
   query getMe {
     me {
@@ -30,6 +17,21 @@ export const getMe = gql`
     }
   }
 `;
+
+export const signUpMutation = gql`
+  mutation signUp($username: String!, $email: String!, $password: String!) {
+    signUp(username: $username, email: $email, password: $password) {
+      token
+      user {
+        _id
+        email
+        username
+      }
+    }
+  }
+`;
+
+
 
 // mutation queries to GraphQl
 export const loginUser = gql`
