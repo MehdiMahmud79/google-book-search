@@ -49,20 +49,20 @@ const resolvers = {
           { new: true, runValidators: true }
         );
       }
-      throw new AuthenticationError("You need to be logged in!");
+      throw new AuthenticationError("Login first to add a book!");
     },
 
-    deleteBook: async (parent, { bookId }, context) => {
+    deleteBook: async (parent, { bookId }, {user}) => {
       console.log("delete a book ");
 
-      if (context.user) {
+      if (user) {
         return await User.findOneAndUpdate(
-          { _id: context.user._id },
+          { _id: user._id },
           { $pull: { savedBooks: { bookId: bookId } } },
           { new: true }
         );
       }
-      throw new AuthenticationError("You need to be logged in!");
+      throw new AuthenticationError("Login first to remove a book!");
     },
   },
 };
