@@ -17,11 +17,10 @@ const SignupForm = () => {
   // set state for alert
   const [showAlert, setShowAlert] = useState(false);
 
-  // MUSTATION TO CREATE A USER
+  //Mutation request to crteate a user
   const [createUser, { data }] = useMutation(signUpMutation);
 
   useEffect(() => {
-    console.log("data:", data);
     if (!data) {
       return;
     }
@@ -33,7 +32,7 @@ const SignupForm = () => {
     setUserFormData({ ...userFormData, [name]: value });
   };
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     // check if form has everything (as per react-bootstrap docs)
@@ -44,11 +43,12 @@ const SignupForm = () => {
     }
 
     try {
-      createUser({ variables: { ...userFormData } });
+      const { data } = await createUser({ variables: { ...userFormData } });
     } catch (err) {
       console.error(err);
       setShowAlert(true);
     }
+
     setUserFormData({
       username: "",
       email: "",

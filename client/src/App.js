@@ -9,10 +9,10 @@ import {
   concat,
 } from "@apollo/client";
 
+import Auth from "./utils/auth";
 import SearchBooks from "./pages/SearchBooks";
 import SavedBooks from "./pages/SavedBooks";
 import Navbar from "./components/Navbar";
-import Auth from "./utils/auth";
 
 function App() {
   const httpLink = new HttpLink({ uri: "/graphql" });
