@@ -4,11 +4,11 @@ const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
-    me: async (parent, args, context) => {
-      if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate("savedBooks");
+    me: async (parent, args, { user }) => {
+      if (user) {
+        return User.findOne({ _id: user._id });
       }
-      throw new AuthenticationError("You need to be logged in!");
+      throw new AuthenticationError("Ylogged in first!");
     },
   },
 
@@ -52,7 +52,7 @@ const resolvers = {
       throw new AuthenticationError("Login first to add a book!");
     },
 
-    deleteBook: async (parent, { bookId }, {user}) => {
+    deleteBook: async (parent, { bookId }, { user }) => {
       console.log("delete a book ");
 
       if (user) {
