@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/google-book-search/static/css/main.8e4bf931.chunk.css",
+    "main.js": "/google-book-search/static/js/main.2ac7c6c4.chunk.js",
+    "main.js.map": "/google-book-search/static/js/main.2ac7c6c4.chunk.js.map",
+    "runtime-main.js": "/google-book-search/static/js/runtime-main.7807af47.js",
+    "runtime-main.js.map": "/google-book-search/static/js/runtime-main.7807af47.js.map",
+    "static/css/2.429e79c4.chunk.css": "/google-book-search/static/css/2.429e79c4.chunk.css",
+    "static/js/2.0177f3bf.chunk.js": "/google-book-search/static/js/2.0177f3bf.chunk.js",
+    "static/js/2.0177f3bf.chunk.js.map": "/google-book-search/static/js/2.0177f3bf.chunk.js.map",
+    "index.html": "/google-book-search/index.html",
+    "precache-manifest.0d5704510dc1cb12dd61cba95d4e2d34.js": "/google-book-search/precache-manifest.0d5704510dc1cb12dd61cba95d4e2d34.js",
+    "service-worker.js": "/google-book-search/service-worker.js",
+    "static/css/2.429e79c4.chunk.css.map": "/google-book-search/static/css/2.429e79c4.chunk.css.map",
+    "static/css/main.8e4bf931.chunk.css.map": "/google-book-search/static/css/main.8e4bf931.chunk.css.map",
+    "static/js/2.0177f3bf.chunk.js.LICENSE.txt": "/google-book-search/static/js/2.0177f3bf.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7807af47.js",
+    "static/css/2.429e79c4.chunk.css",
+    "static/js/2.0177f3bf.chunk.js",
+    "static/css/main.8e4bf931.chunk.css",
+    "static/js/main.2ac7c6c4.chunk.js"
+  ]
+}
