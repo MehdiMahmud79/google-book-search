@@ -4,6 +4,7 @@ import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faBook } from "@fortawesome/free-solid-svg-icons";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -17,7 +18,11 @@ const AppNavbar = () => {
       <Navbar bg="dark" variant="dark" expand="lg">
         <Container fluid>
           <Navbar.Brand as={Link} to="/">
-            Google Books Search
+            <p className="flex flex-wrap ">
+              {" "}
+              <FontAwesomeIcon icon={faBook} className="text-primary " />{" "}
+              <span className="text-warning "> Google Books Search</span>
+            </p>
           </Navbar.Brand>
 
           <Navbar.Toggle aria-controls="navbar" />
@@ -79,10 +84,10 @@ const AppNavbar = () => {
         </Tab.Container>
       </Modal>
       {Auth.loggedIn() ? (
-        <h1 className="px-3 bg-dark">
-          <FontAwesomeIcon icon={faUser} className="text-warning" />{" "}
-          <span className="text-danger">{Auth.getProfile().data.username}</span>{" "}
-        </h1>
+        <h4 className="px-3 bg-dark text-center">
+          <FontAwesomeIcon icon={faUser} className="text-danger ml-4" />{" "}
+          <span className="text-white ">{Auth.getProfile().data.username}</span>{" "}
+        </h4>
       ) : (
         ""
       )}
