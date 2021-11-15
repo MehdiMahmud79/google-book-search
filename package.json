@@ -4,10 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "watch": "nodemon server.js",
-    "develop": "concurrently \"npm run watch\" \"cd client && npm start\"",
-    "build": "cd client && npm run build"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
