@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
 import { useMutation } from "@apollo/client";
+import "./style.css";
 
 import Auth from "../utils/auth";
 import { saveBookMutation } from "../utils/queries";
@@ -117,7 +118,7 @@ const SearchBooks = () => {
         <CardColumns>
           {searchedBooks.map((book) => {
             return (
-              <Card key={book.bookId} border="dark">
+              <Card key={book.bookId} className="cardBody" border="dark">
                 {book.image ? (
                   <Card.Img
                     src={book.image}
@@ -134,14 +135,20 @@ const SearchBooks = () => {
                       disabled={savedBookIds?.some(
                         (savedBookId) => savedBookId === book.bookId
                       )}
-                      className="btn-block btn-info"
+                      className={
+                        savedBookIds?.some(
+                          (savedBookId) => savedBookId === book.bookId
+                        )
+                          ? "btn-block btn-success"
+                          : "btn-block btn-info"
+                      }
                       onClick={() => handleSaveBook(book.bookId)}
                     >
                       {savedBookIds?.some(
                         (savedBookId) => savedBookId === book.bookId
                       )
-                        ? "This book has already been saved!"
-                        : "Save this Book!"}
+                        ? "❤️ Saved to favourite!"
+                        : "➕ Add this Book to favourite!"}
                     </Button>
                   )}
                 </Card.Body>

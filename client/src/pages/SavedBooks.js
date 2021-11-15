@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
 import { useMutation, useQuery } from "@apollo/client";
-
+import "./style.css";
 import { getMe, deleteBookMutation } from "../utils/queries";
 import Auth from "../utils/auth";
 import { removeBookId } from "../utils/localStorage";
@@ -27,28 +27,34 @@ const SavedBooks = () => {
 
   // if data isn't here yet, say so
   if (loading) {
-    return <h2>LOADING...</h2>;
+    return (
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    );
   }
 
   return (
     <>
       <Jumbotron fluid className="text-light bg-dark">
         <Container>
-          <h1>Viewing saved books!</h1>
+          <button className="btn-lg disabled  px-4 py-2 w-100">
+            Your favourite Books{" "}
+            <span className="badge badge-danger display-2">
+              {data.me.savedBooks.length}
+            </span>
+          </button>
         </Container>
       </Jumbotron>
       <Container>
-        <h2>
-          {data?.me.savedBooks.length > 0
-            ? `Viewing ${data.me.savedBooks.length} saved ${
-                data.me.savedBooks.length === 1 ? "book" : "books"
-              }:`
-            : "You have no saved books!"}
-        </h2>
-        <CardColumns>
+        <CardColumns className="bg-info p-3 ">
           {data.me.savedBooks.map((book) => {
             return (
-              <Card key={book.bookId} border="dark">
+              <Card
+                key={book.bookId}
+                border="dark"
+                className="view overlay zoom cardBody"
+              >
                 {book.image ? (
                   <Card.Img
                     src={book.image}
@@ -64,7 +70,7 @@ const SavedBooks = () => {
                     className="btn-block btn-danger"
                     onClick={() => handleDeleteBook(book.bookId)}
                   >
-                    Delete this Book!
+                    🗑️ Delete this Book!
                   </Button>
                 </Card.Body>
               </Card>
