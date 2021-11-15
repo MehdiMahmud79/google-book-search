@@ -84,9 +84,9 @@ const SearchBooks = () => {
 
   return (
     <>
-      <Jumbotron fluid className="text-light bg-dark">
+      <Jumbotron className="text-light bg-dark">
         <Container>
-          <h1>Search for Books!</h1>
+          <p className="display-4 text-center">Search for Books!</p>
           <Form onSubmit={handleFormSubmit}>
             <Form.Row>
               <Col xs={12} md={8}>
@@ -96,7 +96,7 @@ const SearchBooks = () => {
                   onChange={(e) => setSearchInput(e.target.value)}
                   type="text"
                   size="lg"
-                  placeholder="Search for a book"
+                  placeholder="Book's name"
                 />
               </Col>
               <Col xs={12} md={4}>
