@@ -17,7 +17,6 @@ const SavedBooks = () => {
   const handleDeleteBook = async (bookId) => {
     try {
       const { data } = await deleteBook({ variables: { bookId } });
-      console.log("fdsd");
       // upon success, remove book's id from localStorage
       removeBookId(bookId);
     } catch (err) {
