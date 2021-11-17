@@ -4,7 +4,7 @@
 ![badmath](https://img.shields.io/github/forks/Esper06/google-book-search)
 ![badmath](https://img.shields.io/github/stars/Esper06/google-book-search)
 
-# Book-Search-Engine-MERN-
+# Book-Search-Engine-MERN
 A fully functioning Google Books API search engine built with GraphQL API and Apollo Server. This App is using the MERN stack with a React front end, MongoDB database, and Node.js/Express.js server and API.
 
 
@@ -28,6 +28,6 @@ npm run develop
 
 ## WebPages
 
-  * the URL to Heroku:  https://google-book-search.herokuapp.com/
+  * the URL to Heroku:  https://secret-tor-02635.herokuapp.com/
 
   * the URL to the Github repository: https://github.com/MehdiMahmud79/google-book-search
